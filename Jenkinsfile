@@ -4,7 +4,6 @@ node {
     }
     
     stage ('Datadog Agent Installation') {
-        tool name: 'Ansible', type: 'org.jenkinsci.plugins.ansible.AnsibleInstallation'
-        ansiblePlaybook credentialsId: 'private_key', inventory: 'inventory', playbook: 'datadog.yaml'
+        ansiblePlaybook credentialsId: 'private_key', installation: 'Ansible', inventory: 'inventory', playbook: 'datadog.yaml'
     }
 }
