@@ -1,0 +1,16 @@
+---
+- name: 'Install Datadog'
+  hosts: all
+
+  tasks:
+  - name: 'Update packages'
+    shell: "sudo apt update"
+  
+  - name: 'Install docker'
+    shell: "sudo apt install docker docker.io"
+    
+  - name: 'Start docker service'
+    shell: "sudo systemctl start docker"
+    
+  - name: 'Enable on start-up'
+    shell: "sudo systemctl enable docker"
